@@ -1,0 +1,12 @@
+{
+  "name": "clear-reply",
+  "sources": [
+    { "dir": "src", "subdirs": true },
+    { "dir": "tests", "type": "dev" }
+  ],
+  "package-specs": {
+    "module": "esmodule",
+    "in-source": true
+  },
+  "suffix": ".res.mjs"
+}

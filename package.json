@@ -1,0 +1,19 @@
+{
+  "name": "clear-reply",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Chrome side panel that rewrites support-chat drafts into clear English via Groq.",
+  "scripts": {
+    "res": "rescript",
+    "res:watch": "rescript -w",
+    "bundle": "node scripts/build.mjs",
+    "icons": "python3 scripts/make-icons.py",
+    "build": "rescript && node scripts/build.mjs",
+    "test": "rescript && node --test tests/*.res.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "rescript": "^12.3.1"
+  }
+}

@@ -85,6 +85,11 @@ textarea {
   min-height: 120px;
 }
 
+#draft,
+#result {
+  flex: 1 1 auto;
+}
+
 textarea:focus,
 input:focus {
   outline: 2px solid var(--teal);

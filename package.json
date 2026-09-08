@@ -1,6 +1,6 @@
 {
   "name": "clear-reply",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "type": "module",
   "description": "Chrome side panel that rewrites support-chat drafts into clear English via Groq.",

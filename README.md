@@ -12,16 +12,29 @@ paste reply ◀──auto-copy──       clear English
 
 The panel stays open next to the ticket. A popup would close the moment you click back into chat.
 
-## Load
+## Install
+
+No cloning or build tools are needed:
+
+1. [Download Clear Reply](https://github.com/arunkarthik-n/clear-reply/releases/latest/download/clear-reply.zip).
+2. Unzip the download.
+3. Open `chrome://extensions` in Chrome and enable **Developer mode**.
+4. Click **Load unpacked** and select the unzipped `clear-reply` folder.
+
+Chrome only supports one-click installation through the Chrome Web Store. Until Clear Reply is published there, Developer mode is required.
+
+Shortcut: ⌘⇧Y / Ctrl+Shift+Y. Toolbar icon also opens the panel. Right-click selected text → Rewrite with Clear Reply.
+
+### Build from source
 
 ```sh
+git clone https://github.com/arunkarthik-n/clear-reply.git
+cd clear-reply
 npm install
 npm run build
 ```
 
-Chrome → `chrome://extensions` → Developer mode → Load unpacked → `dist/`.
-
-Shortcut: ⌘⇧Y / Ctrl+Shift+Y. Toolbar icon also opens the panel. Right-click selected text → Rewrite with Clear Reply.
+Then load the generated `dist/` folder from `chrome://extensions`.
 
 ## Settings
 

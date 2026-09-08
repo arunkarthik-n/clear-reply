@@ -3,7 +3,6 @@ let resultEl = () => Page.el("result")
 let rewriteBtn = () => Page.el("rewrite")
 let copyBtn = () => Page.el("copy")
 let pasteBtn = () => Page.el("paste")
-let useDraftBtn = () => Page.el("use-draft")
 let setupEl = () => Page.el("setup")
 let statusEl = () => Page.el("status")
 
@@ -22,10 +21,7 @@ let setBusy = (busy: bool): unit => {
   Page.el("rewrite-hint")->Page.setHidden(busy)
 }
 
-let setResultButtons = (hasResult: bool): unit => {
-  copyBtn()->Page.setDisabled(!hasResult)
-  useDraftBtn()->Page.setDisabled(!hasResult)
-}
+let setResultButtons = (hasResult: bool): unit => copyBtn()->Page.setDisabled(!hasResult)
 
 let persistSession = async (): unit =>
   await Chrome.Storage.session->Chrome.Storage.set({
@@ -44,7 +40,6 @@ let copyResult = async (): bool => {
   } else {
     try {
       await Page.clipboard->Page.writeText(text)
-      copyBtn()->Page.setTextContent("Copied")
       note(~kind="ok", "Copied — paste it into the chat.")
       true
     } catch {
@@ -183,12 +178,6 @@ pasteBtn()->Page.addEventListener("click", _ => {
   go()->ignore
 })
 copyBtn()->Page.addEventListener("click", _ => copyResult()->ignore)
-useDraftBtn()->Page.addEventListener("click", _ => {
-  draftEl()->Page.setValue(resultEl()->Page.value)
-  persistSession()->ignore
-  draftEl()->Page.focus
-  note(~kind="", "Ready for another pass.")
-})
 Page.el("settings-btn")->Page.addEventListener("click", _ => openSettings())
 Page.el("open-settings")->Page.addEventListener("click", _ => openSettings())
 

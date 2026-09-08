@@ -643,9 +643,6 @@ Prefer short, direct sentences. Do not inflate length.`;
   function pasteBtn() {
     return el("paste");
   }
-  function useDraftBtn() {
-    return el("use-draft");
-  }
   function setupEl() {
     return el("setup");
   }
@@ -663,7 +660,6 @@ Prefer short, direct sentences. Do not inflate length.`;
   }
   function setResultButtons(hasResult) {
     el("copy").disabled = !hasResult;
-    el("use-draft").disabled = !hasResult;
   }
   async function persistSession() {
     return await chrome.storage.session.set({
@@ -684,7 +680,6 @@ Prefer short, direct sentences. Do not inflate length.`;
     }
     try {
       await navigator.clipboard.writeText(text);
-      el("copy").textContent = "Copied";
       note("ok", "Copied \u2014 paste it into the chat.");
       return true;
     } catch (exn) {
@@ -820,12 +815,6 @@ Prefer short, direct sentences. Do not inflate length.`;
   });
   el("copy").addEventListener("click", (param) => {
     copyResult();
-  });
-  el("use-draft").addEventListener("click", (param) => {
-    el("draft").value = el("result").value;
-    persistSession();
-    el("draft").focus();
-    note("", "Ready for another pass.");
   });
   el("settings-btn").addEventListener("click", (param) => openSettings());
   el("open-settings").addEventListener("click", (param) => openSettings());

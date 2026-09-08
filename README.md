@@ -2,6 +2,10 @@
 
 Chrome side panel for support agents who write English and want a grammar pass before sending.
 
+<p align="center">
+  <img src="docs/clear-reply.png" alt="Clear Reply rewriting a draft in the Chrome side panel" width="380">
+</p>
+
 ```
 chat tab                         side panel
 ---------                        ----------

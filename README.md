@@ -18,12 +18,12 @@ The panel stays open next to the ticket. A popup would close the moment you clic
 
 ## Install
 
-No cloning or build tools are needed:
+Use the built zip from [Releases](https://github.com/arunkarthik-n/clear-reply/releases/latest) named **clear-reply.zip**. Do not download **Source code** — that zip is for development and will fail in Chrome with a missing `manifest.json` if you load the wrong folder.
 
-1. [Download Clear Reply](https://github.com/arunkarthik-n/clear-reply/releases/latest/download/clear-reply.zip).
-2. Unzip the download.
+1. [Download clear-reply.zip](https://github.com/arunkarthik-n/clear-reply/releases/latest/download/clear-reply.zip).
+2. Unzip it. You should see `manifest.json` inside the unzipped folder.
 3. Open `chrome://extensions` in Chrome and enable **Developer mode**.
-4. Click **Load unpacked** and select the unzipped `clear-reply` folder.
+4. Click **Load unpacked** and select **that folder** (the one that contains `manifest.json`).
 
 Chrome only supports one-click installation through the Chrome Web Store. Until Clear Reply is published there, Developer mode is required.
 
@@ -38,7 +38,7 @@ npm install
 npm run build
 ```
 
-Then load the generated `dist/` folder from `chrome://extensions`.
+Then **Load unpacked** and select `dist/` (or this repo folder — it has a root `manifest.json` that points at `dist/`).
 
 ## Settings
 

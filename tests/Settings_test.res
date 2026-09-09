@@ -22,6 +22,10 @@ test("fromBag defaults a missing or blank system prompt", () => {
   equal(Settings.fromBag({systemPrompt: "  "}).systemPrompt, Prompt.system)
 })
 
+test("fromBag upgrades the previous default system prompt", () => {
+  equal(Settings.fromBag({systemPrompt: Prompt.previous}).systemPrompt, Prompt.system)
+})
+
 test("hasKey is false for a blank key", () => {
   equal(Settings.hasKey({...Settings.default, apiKey: ""}), false)
   equal(Settings.hasKey({...Settings.default, apiKey: "gsk_abc"}), true)

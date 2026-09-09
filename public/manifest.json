@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Clear Reply",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Rewrite support-chat drafts into clear English.",
   "permissions": ["storage", "sidePanel", "contextMenus", "clipboardRead", "clipboardWrite"],
   "host_permissions": ["https://api.groq.com/*"],

@@ -18,6 +18,7 @@ let fromBag = (bag: Chrome.bag): t => {
   },
   systemPrompt: switch bag.systemPrompt->Option.getOr("")->String.trim {
   | "" => Prompt.system
+  | prompt if prompt == Prompt.previous => Prompt.system
   | prompt => prompt
   },
 }
